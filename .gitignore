@@ -1,7 +1,73 @@
-# Windows thumbnail cache files
+# Node modules
+node_modules
+
+# Nuget Directory
+.nuget
+
+# NuGet Packages Directory
+packages
+
+# Grunt
+.grunt
+/grunt.cmd
+
+# Grunt generated files
+dist
+
+# Windows image file caches
 Thumbs.db
 ehthumbs.db
-ehthumbs_vista.db
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# SublimeText
+*.sublime-project
+*.sublime-grunt
+*.sublime-workspace
+
+#Webstorm
+.idea/
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.log
+*.vspscc
+*.vssscc
+.builds
+
+#Visual Studio 2017
+.vs
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
 
 # Folder config file
 Desktop.ini
@@ -21,3 +87,28 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
