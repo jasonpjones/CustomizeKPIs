@@ -1,0 +1,75 @@
+.body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ck-area
+{
+    margin-left: 20px;
+
+}
+
+.ck-header
+{
+    text-align: center;
+    width: 570px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.ck-add-remove-area
+{
+
+}
+
+
+
+.ck-add-remove-section
+{
+    float: left;
+}
+
+.ck-selection-box
+{
+    height: 450px;
+    width: 250px;
+    border: solid 1px black;
+}
+
+.ck-add-remove-buttons
+{
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 200px
+}
+
+.ck-add-remove-button
+{
+    width: 30px;
+    height: 30px;
+    background-color: #aaaaaa;
+    margin-bottom: 10px;
+}
+
+
+.ck-create-new-area
+{
+    clear: left;
+}
+
+.ck-create-new-controls-area
+{
+    margin-top: 30px;
+    margin-left: 10px;
+    display: inline-block;
+}
+.ck-control-block
+{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.ck-control-label
+{
+    display: block;
+}

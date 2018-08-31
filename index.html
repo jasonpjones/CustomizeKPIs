@@ -3,8 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link rel="stylesheet" href="lib/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="lib/css/sumoselect.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <script src="lib/jquery-ui-1.12.1.min.js"></script>
+    <script src="lib/jquery.sumoselect.min.js"></script>
+    <script src="lib/lodash-3.5.0.min.js"></script>
+
+    <script src="src/cust_kpi.js"></script>
+    <script src="src/cust_kpi_data.js"></script>
+
+
 </head>
 <body>
 
+    <div class="ck-area">
+
+        <div class="ck-header">_Customize KPIs</div>
+
+        <div class="ck-add-remove-area">
+
+            <div class="ck-add-remove-section">
+                <div class="ck-add-remove-header">_Available KPIs</div>
+                <div id="available-kpis" class="ck-selection-box">
+
+                </div>
+
+
+            </div>
+
+            <div class="ck-add-remove-buttons">
+
+                <div class="ck-add-remove-button"></div>
+                <div class="ck-add-remove-button"></div>
+
+            </div>
+            <div class="ck-add-remove-section">
+                <div class="ck-add-remove-header">_Selected KPIs</div>
+                <div id="selected-kpis" class="ck-selection-box">
+
+                </div>
+
+            </div>
+            <div class="ck-add-remove-buttons">
+
+                <div class="ck-add-remove-button"></div>
+                <div class="ck-add-remove-button"></div>
+
+
+            </div>
+
+        </div>
+
+        <div class="ck-create-new-area">
+            <div class="ck-create-new-controls-area">
+                <div>_Add custom kpi</div>
+                <div class="ck-control-block">
+                    <div class="ck-control-label">
+                        _label here
+                    </div>
+                    <input id="create-new-name" type="text">
+                </div>
+                <div class="ck-control-block">
+                    <div class="ck-control-label">
+                        _label here
+                    </div>
+                    <select id="create-new-field" class="custom-select" ></select>
+                </div>
+                <div class="ck-control-block">
+                    <div class="ck-control-label">
+                        _label wt
+                    </div>
+                    <select id="create-new-operation" class="custom-select" ></select>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
 </body>
+<script>
+    var customizer;
+    $(function() {
+        customizer = new ActInsight.KPICustomizer();
+        customizer.initialize();
+    });
+
+</script>
 </html>
