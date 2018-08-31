@@ -34,6 +34,7 @@
     height: 450px;
     width: 250px;
     border: solid 1px black;
+    overflow-y: auto;
 }
 
 .ck-add-remove-buttons
@@ -44,14 +45,18 @@
     margin-top: 200px
 }
 
-.ck-add-remove-button
+.ck-button
 {
     width: 30px;
     height: 30px;
-    background-color: #aaaaaa;
     margin-bottom: 10px;
+    background-color: aqua;
 }
 
+.ck-button.ck-button-disabled
+{
+    background-color: #aaaaaa;
+}
 
 .ck-create-new-area
 {
@@ -73,3 +78,16 @@
 {
     display: block;
 }
+.ck-kpi-div
+{
+    padding: 5px;
+    border-bottom: solid 1px black;
+    cursor: pointer;
+    cursor: hand;
+
+}
+.ck-selected
+{
+    background-color: #a1c0e4;
+}
+

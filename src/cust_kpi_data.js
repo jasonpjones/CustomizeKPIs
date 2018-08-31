@@ -17,28 +17,25 @@ ActInsight.KPICustomizerData.prototype = {
     getKPIDefinition: function() {
         return Promise.resolve([
             { name : "open_opportunity_count", entity : "opportunity", field : "", operation : "sum", label : "Open Count", isActive:true, isCustom : false },
-            { name : "open_opportunity_total_value", entity : "opportunity", field : "totalExtendedAmt", operation : "sum", label : "Total Value", isActive : true, isCustom : false },
+            { name : "open_opportunity_total_value", entity : "opportunity", field : "totalExtendedAmt", operation : "sum", label : "Total Value", isActive : false, isCustom : false },
             { name : "open_opportunity_weighted_value", entity : "opportunity", field : "weightedAmt", operation : "sum", label : "Weighted Value", isActive : true, isCustom : false },
-            { name : "forecasted_opportunity_value", entity : "opportunity", field : "weightedAmt", operation : "sum", label : "Forecast Value", isActive : true, isCustom : false },
+            { name : "forecasted_opportunity_value", entity : "opportunity", field : "weightedAmt", operation : "sum", label : "Forecast Value", isActive : false, isCustom : false },
             { name : "average_age", entity : "opportunity", field : "", operation : "avg", label : "Average Age", isActive : true, isCustom : false },
-            { name : "closed_won_opp_value", entity : "opportunity", field : "totalExtendedAmt", operation : "sum", label : "Closed-Won Value", isActive : true, isCustom : false },
+            { name : "closed_won_opp_value", entity : "opportunity", field : "totalExtendedAmt", operation : "sum", label : "Closed-Won Value", isActive : false, isCustom : false },
             { name : "closed_lost_opp_value", entity : "opportunity", field : "totalExtendedAmt", operation : "sum", label : "Closed-Lost Value", isActive : true, isCustom : false },
             { name : "average_close_rate", entity : "opportunity", field : "closedPercent", operation : "sum", label : "Close Rate", isActive : true, isCustom : false }
         ]);
-
-
-
     },
     getOpportunityFields: function() {
         return this.getAllOpportunityFields().then(function(allOppFields) {
-            var knownFields = this.absractKnownOpportunityFields(allOppFields),
+            var knownFields = this.abstractKnownOpportunityFields(allOppFields),
                 customFields = this.abstractCustomOpportunityFields(allOppFields);
 
             this.opportunityFields = knownFields.concat(customFields);
 
         }.bind(this));
     },
-    absractKnownOpportunityFields: function(oppFields) {
+    abstractKnownOpportunityFields: function(oppFields) {
         var knownFieldNames = ["productTotal", "weightedTotal", "grossMargin" ];   //todo where are "probabilityPct", "daysOpen"
 
         var knownFields = _.filter(oppFields, function(field){
