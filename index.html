@@ -52,8 +52,6 @@
 
                 <div id="btn-move-up" class="ck-button ck-btn-up ck-button-disabled "></div>
                 <div id="btn-move-down" class="ck-button ck-btn-down ck-button-disabled "></div>
-
-
             </div>
 
         </div>
@@ -63,28 +61,30 @@
                 <div>_Add custom kpi</div>
                 <div class="ck-control-block">
                     <div class="ck-control-label">
-                        _label here
+                        _kpi display name
                     </div>
                     <input id="create-new-name" type="text">
                 </div>
                 <div class="ck-control-block">
                     <div class="ck-control-label">
-                        _label here
+                        _opportunity fields
                     </div>
                     <select id="create-new-field" class="custom-select" ></select>
                 </div>
                 <div class="ck-control-block">
                     <div class="ck-control-label">
-                        _label wt
+                        _operation
                     </div>
-                    <select id="create-new-operation" class="custom-select" ></select>
+                    <select id="create-new-operation" class="custom-select" >
+                        <option value="avg">_average</option>
+                        <option value="sum">_sum</option>
+                    </select>
                 </div>
-
-
+                <div class="ck-control-block">
+                    <button id="create-new-button" disabled="disabled">_add</button>
+                </div>
             </div>
         </div>
-
-
     </div>
 
 

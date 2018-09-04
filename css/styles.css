@@ -4,16 +4,29 @@ body
     background-color: #FCFCFC;
 }
 
+#create-new-name
+{
+    width: 187px;
+    padding: 5px;
+}
+
+#create-new-button
+{
+    width: 90px;
+    height: 28px;
+    margin-left: 110px;
+    margin-top: 8px;
+}
+
 .ck-area
 {
     margin-left: 20px;
-
 }
 
 .ck-header
 {
     text-align: center;
-    width: 570px;
+    width: 480px;
     margin-top: 15px;
     margin-bottom: 20px;
 }
@@ -23,8 +36,6 @@ body
 
 }
 
-
-
 .ck-add-remove-section
 {
     float: left;
@@ -32,10 +43,11 @@ body
 
 .ck-selection-box
 {
-    height: 450px;
-    width: 250px;
+    height: 360px;
+    width: 210px;
     border: solid 1px black;
     overflow-y: auto;
+    font-size: 13.333px;
 }
 
 .ck-add-remove-buttons
@@ -43,8 +55,9 @@ body
     float: left;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 200px
+    margin-top: 140px
 }
+
 
 .ck-button
 {
@@ -54,7 +67,7 @@ body
     background-color: white;
     border: solid 1px black;
     border-radius: 4px;
-    box-shadow: -1px 1px 5px -1px rgba(0,0,0,0.75);
+  /*  box-shadow: -1px 1px 5px -1px rgba(0,0,0,0.75); */
     cursor: hand;
     cursor: pointer;
 }
@@ -81,7 +94,7 @@ body
 
 .ck-button.ck-button-disabled
 {
-    background-color: #D0D0D0;
+    background-color: #E3E3E3;
     cursor: auto;
 }
 
@@ -100,6 +113,7 @@ body
 {
     margin-top: 10px;
     margin-left: 10px;
+    font-size: 13.333px;
 }
 .ck-control-label
 {
@@ -118,3 +132,7 @@ body
     background-color: #a1c0e4;
 }
 
+.SumoSelect.open>.optWrapper {
+    top: 27px;
+    display: block;
+}
