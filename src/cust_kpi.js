@@ -22,6 +22,7 @@ ActInsight.KPICustomizer.prototype = {
             var $kpiDiv = $("<div>", {
                 class: "ck-kpi-div",
                 text: kpiDefn.label,
+                "data-kpi-name": kpiDefn.name,
                 "data-isactive": kpiDefn.isActive? "true": "false"
             });
 
@@ -40,27 +41,33 @@ ActInsight.KPICustomizer.prototype = {
     },
     handleKPIClick: function(e) {
         var $el = $(e.target),
-            isSelected = $el.hasClass("ck-selected"),
-            isActive = $el.attr("data-isactive") === "true";
+            isSelected = $el.hasClass("ck-selected");
+
 
         $(".ck-kpi-div").removeClass("ck-selected");
         $(".ck-button").addClass("ck-button-disabled");
 
         if(!isSelected) {
             $el.addClass("ck-selected");
-            this.updateButtonStatus(isActive)
+            this.updateButtonStatus($el)
         }
 
     },
-    updateButtonStatus: function(isActive) {
-        var activeCount = $(".ck-kpi-div[data-isactive='true']").length;
+    updateButtonStatus: function($el) {
+        var $activeItems = $(".ck-kpi-div[data-isactive='true']"),
+            activeCount = $activeItems.length,
+            isActive = $el.attr("data-isactive") === "true";
 
         $(".ck-button").addClass("ck-button-disabled");
         if(isActive) {
             $("#btn-remove").removeClass("ck-button-disabled");
             if(activeCount > 1) {
-                $("#btn-move-up").removeClass("ck-button-disabled");
-                $("#btn-move-down").removeClass("ck-button-disabled");
+                if($activeItems.first().attr('data-kpi-name') !== $el.attr('data-kpi-name')) {
+                    $("#btn-move-up").removeClass("ck-button-disabled");
+                }
+                if($activeItems.last().attr('data-kpi-name') !== $el.attr('data-kpi-name')) {
+                    $("#btn-move-down").removeClass("ck-button-disabled");
+                }
             }
         }
         else
@@ -72,6 +79,10 @@ ActInsight.KPICustomizer.prototype = {
         var $el = $(e.target),
             btnId = $el.attr("id");
 
+        if($el.hasClass("ck-button-disabled")) {
+            return;
+        }
+
         switch (btnId) {
             case "btn-add":
                 this.moveKPILeftRight("right");
@@ -79,9 +90,13 @@ ActInsight.KPICustomizer.prototype = {
             case "btn-remove":
                 this.moveKPILeftRight("left");
                 break;
+            case "btn-move-up":
+                this.moveKPIUpDown("up");
+                break;
+            case "btn-move-down":
+                this.moveKPIUpDown("down");
+                break;
         }
-
-
     },
     moveKPILeftRight: function(dir) {
         var $target = (dir === "right") ? $("#selected-kpis") : $("#available-kpis"),
@@ -91,9 +106,24 @@ ActInsight.KPICustomizer.prototype = {
         $selKPI.attr("data-isactive", newStatus);
 
         $selKPI.appendTo($target);
-        this.updateButtonStatus(newStatus === "true");
+        this.updateButtonStatus($selKPI);
 
     },
+    moveKPIUpDown: function(dir) {
+        var $selKPI = $(".ck-kpi-div.ck-selected");
+
+        if(dir === "up") {
+            $selKPI.prev().insertAfter($selKPI);
+        }
+        else {
+            $selKPI.next().insertBefore($selKPI);
+        }
+        this.updateButtonStatus($selKPI);
+
+
+    },
+
+
     _setupButtonHandlers: function(){
         $(".ck-button").on("click", this.moveKPI.bind(this));
     }
