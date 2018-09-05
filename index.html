@@ -12,10 +12,10 @@
     <script src="lib/jquery-ui-1.12.1.min.js"></script>
     <script src="lib/jquery.sumoselect.min.js"></script>
     <script src="lib/lodash-3.5.0.min.js"></script>
+    <script src="lib/lie.polyfill.min.js"></script>
 
     <script src="src/cust_kpi.js"></script>
     <script src="src/cust_kpi_data.js"></script>
-
 
 </head>
 <body>
@@ -27,27 +27,20 @@
         <div class="ck-add-remove-area">
 
             <div class="ck-add-remove-section">
-                <div class="ck-add-remove-header">_Available KPIs</div>
-                <div id="available-kpis" class="ck-selection-box">
-
-                </div>
-
-
+                <div class="ck-section-header">_Available KPIs</div>
+                <div id="available-kpis" class="ck-selection-box"></div>
             </div>
 
             <div class="ck-add-remove-buttons">
-
                 <div id="btn-add" class="ck-button ck-btn-right ck-button-disabled "></div>
                 <div id="btn-remove" class="ck-button ck-btn-left ck-button-disabled "></div>
-
             </div>
+
             <div class="ck-add-remove-section">
-                <div class="ck-add-remove-header">_Selected KPIs</div>
-                <div id="selected-kpis" class="ck-selection-box">
-
-                </div>
-
+                <div class="ck-section-header">_Selected KPIs</div>
+                <div id="selected-kpis" class="ck-selection-box"></div>
             </div>
+
             <div class="ck-add-remove-buttons">
 
                 <div id="btn-move-up" class="ck-button ck-btn-up ck-button-disabled "></div>
@@ -58,7 +51,11 @@
 
         <div class="ck-create-new-area">
             <div class="ck-create-new-controls-area">
-                <div>_Add custom kpi</div>
+                <fieldset>
+                    <legend>
+                        <div class="ck-section-header">_Add custom kpi</div>
+                    </legend>
+
                 <div class="ck-control-block">
                     <div class="ck-control-label">
                         _kpi display name
@@ -83,12 +80,14 @@
                 <div class="ck-control-block">
                     <button id="create-new-button" disabled="disabled">_add</button>
                 </div>
+                </fieldset>
             </div>
         </div>
+
     </div>
 
-
 </body>
+
 <script>
     var customizer;
     $(function() {

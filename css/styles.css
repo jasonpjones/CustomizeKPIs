@@ -26,7 +26,7 @@ body
 .ck-header
 {
     text-align: center;
-    width: 480px;
+    width: 400px;
     margin-top: 15px;
     margin-bottom: 20px;
 }
@@ -36,6 +36,11 @@ body
 
 }
 
+.ck-section-header
+{
+    font-size: 14px;
+}
+
 .ck-add-remove-section
 {
     float: left;
@@ -43,11 +48,11 @@ body
 
 .ck-selection-box
 {
-    height: 360px;
-    width: 210px;
+    height: 310px;
+    width: 160px;
     border: solid 1px black;
     overflow-y: auto;
-    font-size: 13.333px;
+    font-size: 12px;
 }
 
 .ck-add-remove-buttons
@@ -105,15 +110,24 @@ body
 
 .ck-create-new-controls-area
 {
-    margin-top: 30px;
-    margin-left: 10px;
+    margin-top: 20px;
+    margin-left: -1px;
     display: inline-block;
+
 }
+
+.ck-create-new-controls-area fieldset
+{
+    border: solid 1px black;
+    width: 220px;
+
+}
+
 .ck-control-block
 {
     margin-top: 10px;
     margin-left: 10px;
-    font-size: 13.333px;
+    font-size: 12px;
 }
 .ck-control-label
 {
